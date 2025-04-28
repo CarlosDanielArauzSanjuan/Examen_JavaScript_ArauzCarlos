@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Recetario - Ver Receta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Mi Recetario</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recipes.html">Mis Recetas</a></li>
+                    <li><a href="create-recipe.html">Crear Receta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="recipe-detail-section">
+            <div class="container">
+                <div class="recipe-header">
+                    <a href="recipes.html" class="back-link">← Volver a Mis Recetas</a>
+                    <div class="recipe-actions">
+                        <button id="edit-recipe" class="btn btn-secondary">Editar</button>
+                        <button id="delete-recipe" class="btn btn-danger">Eliminar</button>
+                    </div>
+                </div>
+                
+                <div id="recipe-detail" class="recipe-detail">
+                    <!-- Los detalles de la receta se cargarán dinámicamente aquí -->
+                    <div class="loading">Cargando receta...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mi Recetario - Diseñado por Carlos Daniel Arauz Sanjuan</p>
+        </div>
+    </footer>
+
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <h3>Confirmar eliminación</h3>
+            <p>¿Estás seguro de que deseas eliminar esta receta? Esta acción no se puede deshacer.</p>
+            <div class="modal-actions">
+                <button id="cancel-delete" class="btn btn-secondary">Cancelar</button>
+                <button id="confirm-delete" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

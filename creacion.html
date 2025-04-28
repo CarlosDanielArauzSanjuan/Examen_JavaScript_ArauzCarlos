@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetas</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="main.js" defer type="module"></script>
+</head>
+<body>
+  <header>
+   <div class="referencies__intoPage">
+     <a href="crear.html">Crear receta</a>
+     <a href="listas.html">Consultar receta</a>
+   </div>
+</header>
+  <main>
+    <h1 class="page-title">Tu recetario</h1>
+          
+      <!-- Columna central: Formulario de creación -->
+      <section class="sectionMiddle__FormCharacter">
+        <form id="form__character">
+          <label for="name">Nombre de la receta:</label>
+          <input type="text" id="name" name="name" required placeholder="Ej. Drizzt Do'Urden" />
+
+          <select id="gender" name="gender" required>
+            <option value="">Selecciona la dificultad</option>
+            <option value="facil">facil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Dificil</option>
+          </select>
+
+          <label for="tiempo de preparacion">preparacion:</label>
+          <input type="text" id="time" name="time" required placeholder="Ej. Drizzt Do'Urden" />
+          
+          <label for="numero de porciones">porciones:</label>
+          <input type="text" id="many" name="many" required placeholder="Ej. Drizzt Do'Urden" />
+
+          <select id="category" name="category" required>
+            <option value="">Selecciona la categoria</option>
+            <option value="Desayuno">Desayuno</option>
+            <option value="Almuerzo">Almuerzo</option>
+            <option value="cena">cena</option>
+            <option value="postre">postre</option>
+            <option value="otro">otro</option>
+          </select>
+
+          
+  </main>
+  <footer>
+    <div class="div__footer">
+      <p>diseñado por Carlos Daniel Arauz Sanjuan</p>
+      <p>2025</p>
+    </div>
+  </footer>
+</body>
+</html>

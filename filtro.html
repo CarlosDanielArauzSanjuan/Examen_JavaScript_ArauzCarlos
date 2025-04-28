@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personajes</title>
+    <link rel="stylesheet" href="../css/personajes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <div class="background-container">
+        <div class="background-image"></div>
+    </div>
+    
+    <header>
+        <h1>Recetario</h1>
+        <p>Explora todas las recetas disponibles</p>
+    </header>
+
+    <div class="container">
+        <div class="filters-container">
+            <h2>Recetas</h2>
+            <div class="filter-group">
+                <label for="category-select">Categoría</label>
+            </div>
+            
+            <div id="sub-filters" class="sub-filters">
+                <!-- Los subfiltros dinámicos se cargarán aquí -->
+            </div>
+            
+            <button id="apply-filters" class="button">Aplicar Filtros</button>
+        </div>
+
+        <div class="results-container">
+            <h2>Resultados</h2>
+            <div class="results-header">
+                <span id="results-count">0 resultados encontrados</span>
+                <div class="pagination">
+                    <button id="prev-page" class="button pagination-button" disabled>Anterior</button>
+                    <span id="page-info">Página 1 de 1</span>
+                    <button id="next-page" class="button pagination-button" disabled>Siguiente</button>
+                </div>
+            </div>
+            
+            <div id="results-grid" class="results-grid">
+                <!-- Los resultados se cargarán aquí -->
+                <div class="loading">Cargando datos...</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="div__footer">
+          <p>diseñado por Carlos Daniel Arauz Sanjuan</p>
+          <p>2025</p>
+        </div>
+      </footer>
+
+    <!-- Scripts -->
+    <script src="main.js"></script>
+
+</body>
+</html>
