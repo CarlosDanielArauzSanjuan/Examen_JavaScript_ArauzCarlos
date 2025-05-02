@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Recetario - Inicio</title>
+    <title>Mi Recetario - Mis Recetas</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,8 +16,8 @@
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="recipes.html">Mis Recetas</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="recipes.html" class="active">Mis Recetas</a></li>
                     <li><a href="create-recipe.html">Crear Receta</a></li>
                     <li><a href="#" id="logout-link" class="logout-link">Cerrar Sesión</a></li>
                     <li>
@@ -33,56 +33,51 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="recipes-section">
             <div class="container">
-                <div class="hero-content">
-                    <h2>Bienvenido a tu Recetario Personal</h2>
-                    <p>Guarda, edita y encuentra fácilmente todas tus recetas en un solo lugar.</p>
-                    <div class="hero-buttons">
+                <h2 class="section-title">Mis Recetas</h2>
+                
+                <div class="search-filter-container">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Buscar recetas...">
+                        <button id="search-button" class="btn btn-search">Buscar</button>
+                    </div>
+                    
+                    <div class="filter-container">
+                        <div class="filter-group">
+                            <label for="category-filter">Categoría:</label>
+                            <select id="category-filter">
+                                <option value="">Todas</option>
+                                <option value="Desayuno">Desayuno</option>
+                                <option value="Almuerzo">Almuerzo</option>
+                                <option value="Cena">Cena</option>
+                                <option value="Postre">Postre</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="difficulty-filter">Dificultad:</label>
+                            <select id="difficulty-filter">
+                                <option value="">Todas</option>
+                                <option value="Fácil">Fácil</option>
+                                <option value="Media">Media</option>
+                                <option value="Difícil">Difícil</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-actions">
+                            <button id="apply-filters" class="btn btn-filter">Aplicar Filtros</button>
+                            <button id="clear-filters" class="btn btn-clear">Limpiar Filtros</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="recipes-container" class="recipes-grid">
+                    <!-- Las recetas se cargarán dinámicamente aquí -->
+                    <div class="no-recipes-message" id="no-recipes-message">
+                        <p>No hay recetas guardadas. ¡Comienza a crear tus recetas!</p>
                         <a href="create-recipe.html" class="btn btn-primary">Crear Receta</a>
-                        <a href="recipes.html" class="btn btn-secondary">Ver Recetas</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000" alt="Receta de pasta" class="active" data-index="0">
-                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=1000" alt="Receta de ensalada" data-index="1">
-                    <img src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?q=80&w=1000" alt="Receta de postre" data-index="2">
-                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000" alt="Receta de carne" data-index="3">
-                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000" alt="Receta vegetariana" data-index="4">
-                    <div class="carousel-controls">
-                        <span class="carousel-dot active" data-index="0"></span>
-                        <span class="carousel-dot" data-index="1"></span>
-                        <span class="carousel-dot" data-index="2"></span>
-                        <span class="carousel-dot" data-index="3"></span>
-                        <span class="carousel-dot" data-index="4"></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">Características</h2>
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📝</div>
-                        <h3>Crea y Edita</h3>
-                        <p>Añade nuevas recetas o modifica las existentes con facilidad.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
-                        <h3>Busca y Filtra</h3>
-                        <p>Encuentra rápidamente lo que buscas con nuestro sistema de búsqueda y filtros.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">💾</div>
-                        <h3>Guarda Automáticamente</h3>
-                        <p>Tus recetas se guardan localmente en tu navegador.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📱</div>
-                        <h3>Accede desde Cualquier Dispositivo</h3>
-                        <p>Diseño responsivo para móviles, tablets y ordenadores.</p>
                     </div>
                 </div>
             </div>
@@ -96,9 +91,7 @@
     </footer>
 
     <script src="main.js"></script>
-    <script src="scroll-fix.js"></script>
     <script>
-        // Verificar si el usuario está logueado
         document.addEventListener("DOMContentLoaded", function() {
             const currentUser = localStorage.getItem("currentUser");
             if (!currentUser) {
@@ -129,71 +122,13 @@
             } catch (error) {
                 console.error("Error al procesar datos de usuario:", error);
             }
-
-            // Inicializar el carrusel de imágenes
-            initImageCarousel();
-
+            
             // Inicializar el tema
             initTheme();
+            
+            // Cargar las recetas
+            loadRecipes();
         });
-
-        // Función para inicializar el carrusel de imágenes
-        function initImageCarousel() {
-            const images = document.querySelectorAll('.hero-image img');
-            const dots = document.querySelectorAll('.carousel-dot');
-            let currentIndex = 0;
-            let interval;
-
-            // Función para mostrar una imagen específica
-            function showImage(index) {
-                // Ocultar todas las imágenes
-                images.forEach(img => {
-                    img.classList.remove('active');
-                });
-                
-                // Desactivar todos los puntos
-                dots.forEach(dot => {
-                    dot.classList.remove('active');
-                });
-                
-                // Mostrar la imagen seleccionada
-                images[index].classList.add('active');
-                dots[index].classList.add('active');
-                currentIndex = index;
-            }
-
-            // Función para avanzar al siguiente slide
-            function nextSlide() {
-                let nextIndex = currentIndex + 1;
-                if (nextIndex >= images.length) {
-                    nextIndex = 0;
-                }
-                showImage(nextIndex);
-            }
-
-            // Iniciar el carrusel automático
-            function startCarousel() {
-                interval = setInterval(nextSlide, 5000);
-            }
-
-            // Detener el carrusel automático
-            function stopCarousel() {
-                clearInterval(interval);
-            }
-
-            // Añadir event listeners a los puntos
-            dots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showImage(index);
-                    stopCarousel();
-                    startCarousel();
-                });
-            });
-
-            // Iniciar el carrusel
-            startCarousel();
-        }
 
         // Función para inicializar el tema
         function initTheme() {
